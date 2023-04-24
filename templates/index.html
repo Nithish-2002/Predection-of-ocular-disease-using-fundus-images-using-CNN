@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ocular Disease Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1><a href="index.html">OCDP</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About </a></li>
+          <li><a class="nav-link scrollto" href="#services">Predict</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End #header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <img src="https://static.wixstatic.com/media/84770f_354d7d9db0344028a08a2a46f2bf82cc~mv2_d_3501_2554_s_4_2.jpg/v1/fill/w_980,h_436,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_354d7d9db0344028a08a2a46f2bf82cc~mv2_d_3501_2554_s_4_2.jpg" class="eye"/>
+      <h1>Ocular Disease Prediction</h1>
+      <h2>A Deep learning based ocular disease prediction project using CNN</h2>
+      <a href="#services" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- #hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="static/assets/img/Eye.jpg" class="img-fluid" alt="" width="315" height="315">
+            <img src="static/assets/img/Eye2.jpg" class="img-fluid" alt="" width="315" height="315">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+            <h3>Deep learning based recognition of ocular disease in Fundus images </h3>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> Glaucoma </li>
+              <li><i class="bi bi-check2-circle"></i> Cataract </li>
+              <li><i class="bi bi-check2-circle"></i> Diabetic retinopathy </li>
+            </ul>
+            <p>A fundus image is a high-resolution photograph of the back of the eye, showing the retina, optic disc, macula, and blood vessels. It provides an important view of the eye's interior and is used to diagnose and monitor a variety of eye conditions, including glaucoma, diabetic retinopathy, and age-related macular degeneration. Fundus imaging is a non-invasive and painless procedure, often performed as part of a routine eye exam. With advances in technology and the application of deep learning algorithms, fundus images can now be analyzed by computers to detect and predict ocular diseases with high accuracy.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Prediction</h2>
+          <p>This project uses convolutional neural networks to classify healthy and non-healthy eyes based on fundus images. Separate binary classification models were developed for Glaucoma, Diabetic Retinopathy and Cataracts, to predict please upload your fundus image.</p>
+        </div>
+        <form action="{{ url_for('predict_disease') }}" method="post" enctype="multipart/form-data" class="p-5 bg-light">
+          <h2 class="mb-4 text-center">Upload Your Fundus Image</h2>
+
+          <div class="form-group mb-4">
+            <label for="diseaseSelect">Select the disease you want to predict:</label>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="radio" name="disease" id="glaucomaRadio" value="glaucoma">
+              <label class="form-check-label" for="glaucomaRadio">Glaucoma</label>
+            </div>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="radio" name="disease" id="cataractRadio" value="cataract">
+              <label class="form-check-label" for="cataractRadio">Cataract</label>
+            </div>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="radio" name="disease" id="retinopathyRadio" value="retinopathy">
+              <label class="form-check-label" for="retinopathyRadio">Diabetic Retinopathy</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="imageUpload" name="file">
+              <label class="custom-file-label" for="imageUpload"></label>
+            </div>
+            <div class="mt-2">
+              <span id="image-name"></span>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-5 py-3">Predict</button>
+          </div>
+        </form>
+
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Our Team Section ======= -->
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Team</h2>
+          <p>Our group has a keen interest in leveraging deep learning techniques for the accurate and early detection of ocular diseases. Through our research, we aim to develop a reliable deep learning model that can predict diseases such as glaucoma, cataract, and diabetic retinopathy with high accuracy</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="static/assets/img/team/Raj.jpg" alt="">
+              <h4>Raj Kumar</h4>
+              <span>211419205136</span>
+              <p>
+                Student at Panimalar Engineering College
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="static/assets/img/team/Vettri.jpg" alt="">
+              <h4>Vettri Chezhian</h4>
+              <span>211419205175</span>
+              <p>
+                Student at Panimalar Engineering College
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="member">
+              <img src="static/assets/img/team/Nithish.jpg" alt="">
+              <h4>Nithish Kumar</h4>
+              <span>211419205119</span>
+              <p>
+                Student at Panimalar Engineering College
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>OCDP</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-one-page-bootstrap-template-amoeba/ -->
+        Done by Batch 12
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
