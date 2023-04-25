@@ -7,6 +7,8 @@ Full project with Datasets and fundus images:
 https://mega.nz/folder/tJNSSThC#6GFsQ27NDJ20-DBtS1edcA
 
 Datasets collection:
-- 
--
--
+- Kaggle Ocular Disease Recognition - https://www.kaggle.com/andrewmvd/ocular-disease-recognition-odir5k
+- Cataract Dataset - https://www.kaggle.com/jr2ngb/cataractdataset
+- RETINAL FUNDUS MULTI-DISEASE IMAGE DATASET - https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid#files 
+
+![image](https://user-images.githubusercontent.com/111478964/234297148-19282ffe-84aa-42d4-934a-07c32ba9ecaf.png)
