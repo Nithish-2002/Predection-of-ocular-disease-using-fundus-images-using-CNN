@@ -11,4 +11,16 @@ Datasets collection:
 - Cataract Dataset - https://www.kaggle.com/jr2ngb/cataractdataset
 - RETINAL FUNDUS MULTI-DISEASE IMAGE DATASET - https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid#files 
 
+Fundus images sample:
+
+- Normal Eye
 ![image](https://user-images.githubusercontent.com/111478964/234297148-19282ffe-84aa-42d4-934a-07c32ba9ecaf.png)
+
+- Cataract Eye
+![image](https://user-images.githubusercontent.com/111478964/234297813-b6fabfe3-9e48-4c03-892e-7a6b5e831b2f.png)
+
+- Glaucoma Eye
+![image](https://user-images.githubusercontent.com/111478964/234297912-d16a3953-7a10-4ee6-8669-35eaee209591.png)
+
+- Diabetic retinopathy Eye
+![image](https://user-images.githubusercontent.com/111478964/234297855-4eb3c8d1-2425-43cc-9ca5-93a54ed997f3.png)
